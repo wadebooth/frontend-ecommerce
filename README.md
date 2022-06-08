@@ -1,4 +1,4 @@
-# Hey! Welcome to my eCommerce final project.
+# Hey! Welcome to my eCommerce final project. You've reached the Frontend! This is where I've built out my single-page application using React.js. Once you open the project, please check my dependencies for the information on what to install to go live. Enjoy!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
