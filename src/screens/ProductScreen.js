@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import axios from 'axios'
+import axios from 'axios' //a lightweight HTTP client, similar to fetch API
 
 const ProductScreen = ({ match }) => {
   const [product, setProduct] = useState('')
