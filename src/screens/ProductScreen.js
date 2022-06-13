@@ -2,20 +2,30 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import axios from 'axios' //a lightweight HTTP client, similar to fetch API
 
 const ProductScreen = ({ match }) => {
   const [product, setProduct] = useState('')
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const { data } = await axios.get(`/api/products/${match.params.id}`)
-
-      setProduct(data)
-    }
-
-    fetchProduct()
+    fetch(
+      `https://ecommerce-backend-wb.web.app/api/products/${match.params.id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data)
+      })
+      .catch(console.error)
   }, [match])
+
+  //   useEffect(() => {
+  //     const fetchProduct = async () => {
+  //       const { data } = await axios.get(`/api/products/${match.params.id}`)
+
+  //       setProduct(data)
+  //     }
+
+  //   fetchProduct()
+  // }, [match])
 
   return (
     <>
