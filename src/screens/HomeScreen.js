@@ -6,7 +6,7 @@ const HomeScreen = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('https://ecommerce-backend-wb.web.app/api/products')
+    fetch('https://ecommerce-backend-wb.web.app/products')
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error(err))
