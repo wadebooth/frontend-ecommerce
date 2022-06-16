@@ -7,9 +7,7 @@ const ProductScreen = ({ match }) => {
   const [product, setProduct] = useState('')
 
   useEffect(() => {
-    fetch(
-      `https://ecommerce-backend-wb.web.app/api/products/${match.params.id}`
-    )
+    fetch(`https://ecommerce-backend-wb.web.app/products/`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data)
@@ -38,7 +36,7 @@ const ProductScreen = ({ match }) => {
               />
             </ListGroup.Item>
             <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-            <ListGroup.Item>Description: ${product.description}</ListGroup.Item>
+            <ListGroup.Item>Description: {product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
