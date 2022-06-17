@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 
-const ProductScreen = ({ match }) => {
-  const [product, setProduct] = useState('')
+const ProductScreen = ({ data }) => {
+  const [productItem, setProductItem] = useState('')
+
+  let { productId } = useParams()
 
   useEffect(() => {
-    fetch(`https://ecommerce-backend-wb.web.app/products/`)
+    fetch(`https://ecommerce-backend-wb.web.app/products`)
       .then((res) => res.json())
-      .then((data) => {
-        setProduct(data)
-      })
-      .catch(console.error)
-  }, [match])
+      .then((data) => setProductItem(data.find((p) => p.id === productId)))
+      .catch((err) => console.error(err))
+  }, [])
 
   return (
     <>
@@ -22,21 +22,28 @@ const ProductScreen = ({ match }) => {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={product.image} alt={product.name} fluid />
+          <Image
+            key={productItem.id}
+            src={productItem.image}
+            alt={productItem.name}
+            fluid
+          />
         </Col>
         <Col md={3}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h3>{product.name}</h3>
+              <h3>{productItem.name}</h3>
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
-                value={product.rating}
-                text={`${product.numReviews} reviews`}
+                value={productItem.rating}
+                text={`${productItem.numReviews} reviews`}
               />
             </ListGroup.Item>
-            <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-            <ListGroup.Item>Description: {product.description}</ListGroup.Item>
+            <ListGroup.Item>Price: ${productItem.price}</ListGroup.Item>
+            <ListGroup.Item>
+              Description: {productItem.description}
+            </ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
@@ -46,7 +53,7 @@ const ProductScreen = ({ match }) => {
                 <Row>
                   <Col>Price:</Col>
                   <Col>
-                    <strong>${product.price}</strong>
+                    <strong>${productItem.price}</strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -55,7 +62,7 @@ const ProductScreen = ({ match }) => {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
-                    {product.countInStock > 0 ? 'In stock' : 'Out of stock'}
+                    {productItem.countInStock > 0 ? 'In stock' : 'Out of stock'}
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -63,7 +70,7 @@ const ProductScreen = ({ match }) => {
                 <Button
                   className='btn-block'
                   type='button'
-                  disabled={product.countInStock === 0}
+                  disabled={productItem.countInStock === 0}
                 >
                   Add To Cart
                 </Button>

@@ -1,3 +1,4 @@
+import React from 'react'
 import Header from './components/Header'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
@@ -5,6 +6,7 @@ import { Container } from 'react-bootstrap'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
 import LoginScreen from './screens/LoginScreen'
+import Cart from './components/Cart'
 
 const App = () => {
   return (
@@ -16,6 +18,7 @@ const App = () => {
           <Route path='/' element={<HomeScreen />} />
           <Route path='/product/:id' element={<ProductScreen />} />
           <Route path='/login' element={<LoginScreen />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </Container>
       {/* </main> */}
