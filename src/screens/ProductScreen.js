@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 
+//setup for the product screen
+
 const ProductScreen = ({ data }) => {
   const [productItem, setProductItem] = useState('')
 
