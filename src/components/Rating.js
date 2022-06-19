@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+//adds rating star based off 1/2 amounts
+
 const Rating = ({ value, text, color }) => {
   return (
     <div className='rating'>
@@ -75,5 +77,3 @@ Rating.propTypes = {
 }
 
 export default Rating
-
-
