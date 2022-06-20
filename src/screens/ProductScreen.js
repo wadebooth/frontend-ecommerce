@@ -8,12 +8,14 @@ import Rating from '../components/Rating'
 const ProductScreen = ({ data }) => {
   const [productItem, setProductItem] = useState('')
 
-  let { productId } = useParams()
+  let { id } = useParams()
 
   useEffect(() => {
     fetch(`https://ecommerce-backend-wb.web.app/products`)
       .then((res) => res.json())
-      .then((data) => setProductItem(data.find((p) => p.id === productId)))
+      .then((data) => {
+        setProductItem(data.find((p) => p._id === id))
+      })
       .catch((err) => console.error(err))
   }, [])
 
