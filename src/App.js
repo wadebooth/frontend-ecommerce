@@ -12,7 +12,6 @@ export const UserContext = createContext(null)
 
 const App = () => {
   const [user, setUser] = useState()
-  const [cart, setCart] = useState()
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser }}>
