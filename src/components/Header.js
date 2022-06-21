@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { UserContext } from '../App'
+import Logo from '../Logo.png'
+import '../App.css'
 
 const Header = () => {
   const { user, setUser } = useContext(UserContext)
@@ -12,7 +14,15 @@ const Header = () => {
         <Navbar bg='clear' variant='dark' expand='lg' collapseOnSelect>
           <Container>
             <LinkContainer to='/'>
-              <Navbar.Brand>Elektric Boutique</Navbar.Brand>
+              <Navbar.Brand>
+                <img
+                  src={Logo}
+                  className='Home-Logo'
+                  alt='Logo'
+                  width='50'
+                  height='60'
+                />{' '}
+              </Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
