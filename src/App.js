@@ -1,13 +1,14 @@
 import React, { createContext, useState, useEffect } from 'react'
-import Header from './components/Header'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Footer from './components/Footer'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
 import LoginScreen from './screens/LoginScreen'
-import Cart from './components/Cart'
+import Header from './components/Header'
 import LoadingScreen from './components/LoadingScreen'
+import Cart from './components/Cart'
+import ProductCarousel from './components/ProductsCarousel'
+import Footer from './components/Footer'
 
 export const UserContext = createContext(null)
 

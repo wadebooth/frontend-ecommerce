@@ -14,15 +14,6 @@ const ProductScreen = ({ data }) => {
   const addItems = useContext(AddCartContext)
   let { id } = useParams()
 
-  useEffect(() => {
-    fetch(`https://ecommerce-backend-wb.web.app/products`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProductItem(data.find((p) => p._id === id))
-      })
-      .catch((err) => console.error(err))
-  }, [])
-
   const handleClick = (e, item) => {
     // console.log(`add ${JSON.stringify(item)} to cart....`)
     // e.preventDefault()
