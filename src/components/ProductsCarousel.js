@@ -18,16 +18,20 @@ const ProductCarousel = ({ product }) => {
     <Carousel pause='hover'>
       {products.map((product) => (
         <Carousel.Item key={product._id}>
-          {/* <Link to={`/${product._id}`}> */}
-          <div className='center'>
-            <Image src={product.image} alt={product.name} />
-          </div>
-          <Carousel.Caption className='carousel-caption'>
-            <h2>
-              {product.name} (${product.price})
-            </h2>
-          </Carousel.Caption>
-          {/* </Link> */}
+          <Link to={`products/${product._id}`}>
+            <div className='center'>
+              <Image
+                className='carousel-image'
+                src={product.image}
+                alt={product.name}
+              />
+            </div>
+            <Carousel.Caption className='carousel-caption'>
+              <h2>
+                {product.name} (${product.price})
+              </h2>
+            </Carousel.Caption>
+          </Link>
         </Carousel.Item>
       ))}
     </Carousel>
