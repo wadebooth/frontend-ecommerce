@@ -11,7 +11,7 @@ export default function LoadingScreen() {
         alignItems: 'center',
       }}
     >
-      <ReactLoading type='balls' color='#0000FF' height={100} width={50} />
+      <ReactLoading type='balls' color='White' />
     </div>
   )
 }

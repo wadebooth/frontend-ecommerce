@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Route } from 'react-router-dom'
 import { UserContext } from '../App'
 import Logo from '../Logo.png'
+import SearchBox from './SearchBox'
 import '../App.css'
 
 const Header = () => {
@@ -29,6 +31,7 @@ const Header = () => {
             </LinkContainer>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
+              <SearchBox />
               <Nav className='ms-auto'>
                 <LinkContainer to='/cart'>
                   <Nav.Link>
