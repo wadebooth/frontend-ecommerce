@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { UserContext } from '../App'
 
-const header = () => {
+const Header = () => {
+  const { user, setUser } = useContext(UserContext)
+
   return (
     <>
       <header>
@@ -19,11 +22,16 @@ const header = () => {
                     <i className='fas fa-shopping-cart'></i>Cart
                   </Nav.Link>
                 </LinkContainer>
-                <LinkContainer to='/login'>
-                  <Nav.Link>
-                    <i className='fas fa-user'></i>Sign In
-                  </Nav.Link>
-                </LinkContainer>
+
+                {!user ? (
+                  <LinkContainer to='/login'>
+                    <Nav.Link>
+                      <i className='fas fa-user'></i>Sign In
+                    </Nav.Link>
+                  </LinkContainer>
+                ) : (
+                  <div>Hello, {user.displayName}</div>
+                )}
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -33,4 +41,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header
