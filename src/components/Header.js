@@ -1,14 +1,13 @@
 import React, { useContext } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import { Route } from 'react-router-dom'
 import { UserContext } from '../App'
 import Logo from '../Logo.png'
 import SearchBox from './SearchBox'
 import '../App.css'
 
 const Header = () => {
-  const { user, setUser } = useContext(UserContext)
+  const { user } = useContext(UserContext)
 
   return (
     <>
@@ -35,14 +34,14 @@ const Header = () => {
               <Nav className='ms-auto'>
                 <LinkContainer to='/cart'>
                   <Nav.Link>
-                    <i className='fas fa-shopping-cart'></i>Cart
+                    <i></i>Cart
                   </Nav.Link>
                 </LinkContainer>
 
                 {!user ? (
                   <LinkContainer to='/login'>
                     <Nav.Link>
-                      <i className='fas fa-user'></i>Sign In
+                      <i></i>Login
                     </Nav.Link>
                   </LinkContainer>
                 ) : (
