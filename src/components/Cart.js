@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useContext } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import Product from '../components/Product'
 import { CartContext, RemoveCartContext, AddCartContext } from './CartContext'
 
