@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useContext } from 'react'
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import Product from '../components/Product'
 import { CartContext, RemoveCartContext, AddCartContext } from './CartContext'
 
@@ -41,6 +41,7 @@ const Cart = () => {
   return (
     <>
       <h1>Shopping Cart</h1>
+      <h4>Items Added:</h4>
       <Row>
         {products.map((product) => {
           return (
@@ -50,6 +51,9 @@ const Cart = () => {
           )
         })}
       </Row>
+      <Button type='Submit' variant='primary' to='/checkout'>
+        Continue to checkout
+      </Button>
     </>
   )
 }
