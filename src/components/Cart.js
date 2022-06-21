@@ -41,7 +41,6 @@ const Cart = () => {
   return (
     <>
       <h1>Shopping Cart</h1>
-      <h4>Items Added</h4>
       <Row>
         {products.map((product) => {
           return (
