@@ -15,13 +15,16 @@ const Header = () => {
           <Container>
             <LinkContainer to='/'>
               <Navbar.Brand>
-                <img
-                  src={Logo}
-                  className='Home-Logo'
-                  alt='Logo'
-                  width='50'
-                  height='60'
-                />{' '}
+                <span>
+                  <img
+                    src={Logo}
+                    className='Home-Logo'
+                    alt='Logo'
+                    width='50'
+                    height='60'
+                  />{' '}
+                </span>
+                Electric Boutique
               </Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />

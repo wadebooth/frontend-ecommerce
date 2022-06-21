@@ -6136,7 +6136,7 @@ fieldset:disabled .btn {
   justify-content: center;
   padding: 0;
   margin-right: 15%;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   margin-left: 15%;
   list-style: none;
 }
@@ -6168,7 +6168,7 @@ fieldset:disabled .btn {
   opacity: 1;
 }
 .carousel-caption {
-  position: absolute;
+  position: initial;
   right: 15%;
   bottom: 1.25rem;
   left: 15%;
