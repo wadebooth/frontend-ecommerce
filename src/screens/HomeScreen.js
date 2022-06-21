@@ -15,7 +15,7 @@ const HomeScreen = () => {
   return (
     <>
       <ProductCarousel />
-      <h1>Latest Products</h1>
+      <h2>Latest Products</h2>
       <Row>
         {products.map((product) => {
           return (
