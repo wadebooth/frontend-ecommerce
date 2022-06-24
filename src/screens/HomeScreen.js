@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import ProductCarousel from '../components/ProductsCarousel'
+// import MapContainer from '../components/Map'
 
 const HomeScreen = () => {
   const [products, setProducts] = useState([])
