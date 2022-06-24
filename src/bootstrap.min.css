@@ -2253,7 +2253,7 @@ textarea.form-control-lg {
   -moz-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
-  color-adjust: exact;
+  print-color-adjust: exact;
 }
 .form-check-input[type='checkbox'] {
   border-radius: 0.25em;
@@ -4022,7 +4022,7 @@ fieldset:disabled .btn {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   -ms-flex-positive: 1;
-  flex-grow: 1;
+  flex-grow: 0.5;
   -ms-flex-align: center;
   align-items: center;
 }
@@ -6136,7 +6136,7 @@ fieldset:disabled .btn {
   justify-content: center;
   padding: 0;
   margin-right: 15%;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   margin-left: 15%;
   list-style: none;
 }
@@ -6168,7 +6168,7 @@ fieldset:disabled .btn {
   opacity: 1;
 }
 .carousel-caption {
-  position: absolute;
+  position: initial;
   right: 15%;
   bottom: 1.25rem;
   left: 15%;

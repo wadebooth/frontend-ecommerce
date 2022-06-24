@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import ProductCarousel from '../components/ProductsCarousel'
+// import MapContainer from '../components/Map'
 
 const HomeScreen = () => {
   const [products, setProducts] = useState([])
@@ -15,7 +16,7 @@ const HomeScreen = () => {
   return (
     <>
       <ProductCarousel />
-      <h1>Latest Products</h1>
+      <h2>Latest Products</h2>
       <Row>
         {products.map((product) => {
           return (

@@ -3,10 +3,11 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { UserContext } from '../App'
 import Logo from '../Logo.png'
+import SearchBox from './SearchBox'
 import '../App.css'
 
 const Header = () => {
-  const { user, setUser } = useContext(UserContext)
+  const { user } = useContext(UserContext)
 
   return (
     <>
@@ -15,28 +16,32 @@ const Header = () => {
           <Container>
             <LinkContainer to='/'>
               <Navbar.Brand>
-                <img
-                  src={Logo}
-                  className='Home-Logo'
-                  alt='Logo'
-                  width='50'
-                  height='60'
-                />{' '}
+                <span>
+                  <img
+                    src={Logo}
+                    className='Home-Logo'
+                    alt='Logo'
+                    width='50'
+                    height='60'
+                  />{' '}
+                </span>
+                Electric Boutique
               </Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
+              <SearchBox />
               <Nav className='ms-auto'>
                 <LinkContainer to='/cart'>
                   <Nav.Link>
-                    <i className='fas fa-shopping-cart'></i>Cart
+                    <i></i>Cart
                   </Nav.Link>
                 </LinkContainer>
 
                 {!user ? (
                   <LinkContainer to='/login'>
                     <Nav.Link>
-                      <i className='fas fa-user'></i>Sign In
+                      <i></i>Login
                     </Nav.Link>
                   </LinkContainer>
                 ) : (

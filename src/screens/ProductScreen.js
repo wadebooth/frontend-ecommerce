@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import { AddCartContext } from '../components/CartContext'
-import { useContext } from 'react'
 
 //setup for the product screen
 
@@ -11,7 +9,6 @@ const ProductScreen = ({ data }) => {
   const navigate = useNavigate()
 
   const [productItem, setProductItem] = useState('')
-  const addItems = useContext(AddCartContext)
   let { id } = useParams()
 
   useEffect(() => {
@@ -24,9 +21,6 @@ const ProductScreen = ({ data }) => {
   }, [])
 
   const handleClick = (e, item) => {
-    // console.log(`add ${JSON.stringify(item)} to cart....`)
-    // e.preventDefault()
-    // addItems(item._id)
     let previousItems = JSON.parse(localStorage.getItem('cart')) || []
     previousItems.push(item)
     console.log(`my previous items ${previousItems}`)
